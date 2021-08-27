@@ -7,6 +7,7 @@ from typing import Any, Dict, Tuple
 import discord
 import toml
 from pydantic import BaseSettings as PydanticBaseSettings
+from pydantic.color import Color as ColorBase
 from pydantic.env_settings import SettingsSourceCallable
 from pydantic.types import conint
 
@@ -107,6 +108,16 @@ class BotMode(BaseSettings):
     develop: bool = False
 
 
+class Colors(BaseSettings):
+    """
+    Default colors.
+
+    These should only be changed here to change the default colors.
+    """
+
+    embed_color: ColorBase = "0087BD"
+
+
 class DevConfig(BaseSettings):
     """
     Developer specific configuration.
@@ -125,6 +136,7 @@ class ThreadConfig(BaseSettings):
 class ModmailConfig(BaseSettings):
     bot: BotConfig
     dev: DevConfig
+    colors: Colors
     thread: ThreadConfig
 
 
