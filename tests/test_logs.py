@@ -12,7 +12,7 @@ Test custom logging levels
 
 
 @pytest.mark.dependency(name="create_logger")
-def test_create_logging():
+def test_create_logging() -> None:
     """Modmail logging is importable and sets root logger correctly."""
     log = logging.getLogger(__name__)
     assert isinstance(log, ModmailLogger)
@@ -30,7 +30,7 @@ def log() -> ModmailLogger:
 
 
 @pytest.mark.dependency(depends=["create_logger"])
-def test_notice_level(log):
+def test_notice_level(log: ModmailLogger) -> None:
     """Test notice logging level prints a notice response."""
     notice_test_phrase = "Kinda important info"
     stdout = io.StringIO()
@@ -44,7 +44,7 @@ def test_notice_level(log):
 
 
 @pytest.mark.dependency(depends=["create_logger"])
-def test_trace_level(log):
+def test_trace_level(log: ModmailLogger) -> None:
     """Test trace logging level prints a trace response."""
     trace_test_phrase = "Getting in the weeds"
     stdout = io.StringIO()
