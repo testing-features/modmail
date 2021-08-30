@@ -39,8 +39,43 @@ Test notice logging level prints a notice response.
 Test trace logging level prints a trace response.
 
 **Markers:**
-- skip
 - dependency  (depends=['create_logger'])
+# tests.modmail.extensions.test_extension_manager
+## TestExtensionConverter
+Test the extension converter converts extensions properly.
+### test_conversion_success
+Test all extensions in the list are properly converted.
+
+**Markers:**
+- parametrize (extension['extension_manager', 'meta', 'plugin_manager'])
+- asyncio
+### test_conversion_success
+Test all extensions in the list are properly converted.
+
+**Markers:**
+- parametrize (extension['extension_manager', 'meta', 'plugin_manager'])
+- asyncio
+### test_conversion_success
+Test all extensions in the list are properly converted.
+
+**Markers:**
+- parametrize (extension['extension_manager', 'meta', 'plugin_manager'])
+- asyncio
+# tests.modmail.extensions.test_plugin_manager
+## TestExtensionConverter
+Test the extension converter converts extensions properly.
+### test_conversion_success
+Test all extensions in the list are properly converted.
+
+**Markers:**
+- parametrize (extension['gateway_logger', 'charinfo'])
+- asyncio
+### test_conversion_success
+Test all extensions in the list are properly converted.
+
+**Markers:**
+- parametrize (extension['gateway_logger', 'charinfo'])
+- asyncio
 # tests.modmail.utils.test_embeds
 ##
 ### test_patch_embed
